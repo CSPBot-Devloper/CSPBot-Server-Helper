@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="websocket.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="server.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="websocket.h">
+      <Filter>Head</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>Head</Filter>
+    </ClInclude>
+    <ClInclude Include="helper.h">
+      <Filter>Head</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Head</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Head">
+      <UniqueIdentifier>{56e62889-c1c8-4194-9ce6-f3cc60ffde78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{cebc8c6a-31b2-4b46-a721-ddacd0499389}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
