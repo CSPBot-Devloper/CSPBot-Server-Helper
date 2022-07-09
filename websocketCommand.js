@@ -1,7 +1,7 @@
 //LiteLoaderScript Dev Helper
 /// <reference path="e:\MCServer\LXLDevHelper-VsCode\Library/Library/JS/Api.js" /> 
 
-
+var port = 8089
 var wsc = new WSClient();
 var saveTime = 0;
 logger.setTitle("CSPBot-Websocket")
@@ -50,7 +50,7 @@ function connectSuccess(success){
 }
 
 function connectServer(){
-    wsc.connectAsync("ws://127.0.0.1:8089",connectSuccess);
+    wsc.connectAsync("ws://127.0.0.1:"+port,connectSuccess);
     return true;
 }
 
