@@ -63,10 +63,7 @@ bool Server::runCmd(string cmd) {
 	if (!started) {
 		return false;
 	}
-	if (canSend) {
-		if (pClient == nullptr) {
-			return false;
-		}
+	if (pClient != nullptr) {
 		cmd = Helper::replace(cmd, "\r", "");
 		cmd = Helper::replace(cmd, "\n", "");
 		cmd = Helper::replace(cmd, "\"", "\\\"");

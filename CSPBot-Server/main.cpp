@@ -10,6 +10,9 @@
 #include <boost/bind.hpp>
 #include <Nlohmann/json.hpp>
 #include "helper.h"
+#include <fstream>
+
+#pragma warning(disable:4251);
 
 using json = nlohmann::json;
 using namespace std;
@@ -85,13 +88,23 @@ void on_close(void* pClient, std::string msg)
 	pClient = nullptr;
 }
 
+//获取端口
+int getPort() {
+	json j;
+	ifstream fin("config.json");
+	fin >> j;
+	return j["port"].get<int>();
+}
+
 //开启Websocket服务器
 void startWebsocketServer() {
-	WebSockServer::Instance().Init(8089,
+	WebSockServer::Instance().Init(getPort(),
 		boost::bind(on_open, _1),
 		boost::bind(on_close, _1, _2),
 		boost::bind(on_message, _1, _2, _3)
 	);
+	string s = "Websocket Server is running on ws://127.0.0.1:" + to_string(getPort());
+	WriteFile(hStdout, s.c_str(), s.length(), &dwWritten, NULL);
 	WebSockServer::Instance().StartServer();
 }
 
